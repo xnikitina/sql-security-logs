@@ -10,7 +10,7 @@ This project demonstrates how to use SQL queries to filter and analyze login att
 
 ## 🚀 How to Use
 1. Clone the repository:
-   `git clone https://github.com/yourname/sql-security-logs.git`
+   `git clone https://github.com/xnikitina/sql-security-logs.git`
 2. Run setup:
    ./setup.sh
 3. Execute queries:
