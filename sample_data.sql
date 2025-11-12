@@ -1,5 +1,5 @@
 -- Tabelle: login_attempts
-CREATE TABLE login_attempts (
+CREATE TABLE IF NOT EXISTS login_attempts (
     id INTEGER PRIMARY KEY,
     username TEXT,
     status TEXT,
@@ -9,7 +9,7 @@ CREATE TABLE login_attempts (
 );
 
 -- Tabelle: employees
-CREATE TABLE employees (
+CREATE TABLE IF NOT EXISTS employees (
     id INTEGER PRIMARY KEY,
     username TEXT,
     department TEXT,
