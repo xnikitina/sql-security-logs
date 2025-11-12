@@ -17,8 +17,23 @@ SELECT * FROM login_attempts WHERE username LIKE 'n__a'; -- genau 4 Zeichen, beg
 -- 6. NOT
 SELECT * FROM employees WHERE department != 'IT';
 
--- 7. JOIN: Login-Versuche mit Mitarbeiterdaten verknüpfen
+-- 7. JOIN: Login-Versuche mit Mitarbeiterdaten verknüpfen, 1. Variante mit JOIN
 SELECT la.username, la.status, la.login_date, e.department
 FROM login_attempts la
 JOIN employees e ON la.username = e.username
 WHERE la.status = 'failed';
+
+-- 8. INNER JOIN: Login-Versuche mit Mitarbeiterdaten verknüpfen, 2. Variante
+SELECT la.username, la.status, la.login_date, e.department
+FROM login_attempts la
+INNER JOIN employees e ON la.username = e.username
+WHERE la.status = 'failed';
+
+-- 9. INNER JOIN: Login-Versuche mit Mitarbeiterdaten verknüpfen, 3. Variante
+SELECT login_attempts.username, login_attempts.status, login_attempts.login_date, employees.department
+FROM login_attempts
+INNER JOIN employees ON login_attempts.username = employees.username
+WHERE login_attempts.status = 'failed';
+
+
+
