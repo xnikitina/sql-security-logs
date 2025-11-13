@@ -59,3 +59,15 @@ FULL OUTER JOIN employees AS e ON la.username = e.username;
 -- 14. COUNT: Counts how many entries have a value in the username column in the table login_attempts.
 -- Filters only those rows where the username is exactly "hacker".
  SELECT COUNT(username) FROM login_attempts WHERE username LIKE 'hacker';
+
+-- 15. AVG: Calculates the average value of all salaries in that column.
+ SELECT AVG(salary) FROM employees;
+
+-- 16. SUM: Adds up all the values in the salary column.
+SELECT SUM(salary) FROM employees;
+
+-- 17. ORDER BY: Ascending order (lowest salary first).
+SELECT username, department, salary FROM employees ORDER BY salary ASC;
+
+-- 18. ORDER BY: Descending order (highest salary first).
+SELECT username, department, salary FROM employees ORDER BY salary DESC;
