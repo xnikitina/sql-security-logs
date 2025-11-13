@@ -41,3 +41,21 @@ FROM login_attempts AS la
 JOIN employees AS e ON la.username = e.username
 WHERE la.status = 'failed';
 
+-- 11. LEFT JOIN: Shows all login attempts, even if no employee exists.
+SELECT la.username, la.status, la.login_date, e.department
+FROM login_attempts AS la
+LEFT JOIN employees AS e ON la.username = e.username;
+
+-- 12. RIGHT JOIN: Shows all employees, even if they have no login attempts.
+SELECT la.username, la.status, la.login_date, e.department
+FROM login_attempts AS la
+RIGHT JOIN employees AS e ON la.username = e.username;
+
+-- 13. FULL OUTER JOIN: Shows everything from both tables.
+SELECT la.username, la.status, la.login_date, e.department
+FROM login_attempts AS la
+FULL OUTER JOIN employees AS e ON la.username = e.username;
+
+-- 14. COUNT: Counts how many entries have a value in the username column in the table login_attempts.
+-- Filters only those rows where the username is exactly "hacker".
+ SELECT COUNT(username) FROM login_attempts WHERE username LIKE 'hacker';
